@@ -4,6 +4,7 @@ import React from 'react';
 import { useModel, SelectLang } from 'umi';
 import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
+import NoticeIconView from '../NoticeIcon';
 import styles from './index.less';
 
 export type SiderTheme = 'light' | 'dark';
@@ -54,6 +55,7 @@ const GlobalHeaderRight: React.FC = () => {
       >
         <QuestionCircleOutlined />
       </span>
+      <NoticeIconView/>
       <Avatar />
       <SelectLang className={styles.action} />
     </Space>

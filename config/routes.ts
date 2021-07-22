@@ -91,7 +91,7 @@
   {
     path:'/data-recording',
     name:'data-recording',
-    icon:'',
+    icon:'icon-bi',
     routes:[
       {
         path:'proform',
