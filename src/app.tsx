@@ -103,6 +103,7 @@ export const request: RequestConfig = {
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   return {
+    iconfontUrl:'https:////at.alicdn.com/t/font_2689913_bd59n5xy0g8.js',
     rightContentRender: () => <RightContent />,
     disableContentMargin: false,
     waterMarkProps: {
