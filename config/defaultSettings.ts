@@ -25,7 +25,7 @@ const Settings: LayoutSettings & {
   "navTheme": "light",
   "splitMenus": false,
   "fixedHeader": false,
-  "title":"建投信息"
+  "title":"项目决策信息平台"
 };
 
 export default Settings;

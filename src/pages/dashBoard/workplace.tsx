@@ -1,14 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProCard, { StatisticCard } from '@ant-design/pro-card';
 import RcResizeObserver from 'rc-resize-observer';
 import { RightOutlined, EllipsisOutlined } from '@ant-design/icons';
-import { Space } from 'antd';
+import { Space, Button, Dropdown, Menu, Modal, Skeleton, Timeline, Typography, Anchor } from 'antd';
 
 const { Statistic, Divider } = StatisticCard;
 
 export default () => {
   const [responsive, setResponsive] = useState(false);
+  const { Title, Paragraph, Text, Link } = Typography;
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key="1">同意</Menu.Item>
+      <Menu.Item key="2">不同意</Menu.Item>
+    </Menu>
+  );
+  const [visible, setVisible] = useState(false);
+
+  const [targetOffset, setTargetOffset] = useState<number | undefined>(undefined);
+  useEffect(() => {
+    setTargetOffset(window.innerHeight);
+  }, []);
+
+  function handleMenuClick(e) {
+    console.log('click', e);
+  }
 
   return (
     <PageContainer>
@@ -153,95 +170,188 @@ export default () => {
           />
         </ProCard>
       </RcResizeObserver>
-      <ProCard style={{marginTop:16}} gutter={8} title="待审批">
-        <StatisticCard
-          title={
-            <Space>
-              <span>审批申请一</span>
-              <RightOutlined style={{ color: 'rgba(0,0,0,0.65)' }} />
-            </Space>
-          }
-          extra={<EllipsisOutlined />}
-          statistic={{
-            value: 1102893,
-            prefix: '¥',
-            description: (
-              <Space>
-                <Statistic title="实际完成度" value="82.3%" />
-                <Statistic title="当前目标" value="¥6000" />
-              </Space>
-            ),
-          }}
-          chart={
-            <>
-              <img
-                src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                alt="chart"
-                width="100%"
-              />
-            </>
-          }
-          style={{ width: 268 }}
-        />
-        <StatisticCard
-          title={
-            <Space>
-              <span>审批申请二</span>
-              <RightOutlined style={{ color: 'rgba(0,0,0,0.65)' }} />
-            </Space>
-          }
-          extra={<EllipsisOutlined />}
-          statistic={{
-            value: 1102893,
-            prefix: '¥',
-            description: (
-              <Space>
-                <Statistic title="实际完成度" value="82.3%" />
-                <Statistic title="当前目标" value="¥6000" />
-              </Space>
-            ),
-          }}
-          chart={
-            <>
-              <img
-                src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                alt="chart"
-                width="100%"
-              />
-            </>
-          }
-          style={{ width: 268 }}
-        />
-        <StatisticCard
-          title={
-            <Space>
-              <span>审批申请三</span>
-              <RightOutlined style={{ color: 'rgba(0,0,0,0.65)' }} />
-            </Space>
-          }
-          extra={<EllipsisOutlined />}
-          statistic={{
-            value: 1102893,
-            prefix: '¥',
-            description: (
-              <Space>
-                <Statistic title="实际完成度" value="82.3%" />
-                <Statistic title="当前目标" value="¥6000" />
-              </Space>
-            ),
-          }}
-          chart={
-            <>
-              <img
-                src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                alt="chart"
-                width="100%"
-              />
-            </>
-          }
-          style={{ width: 268 }}
-        />
+      <ProCard style={{marginTop:16}} gutter={8} title="待审批" ghost>
+        <ProCard ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+          actions={[
+            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+            <Dropdown.Button key="audit" overlay={menu} type="text">操作</Dropdown.Button>
+          ]}
+        >
+          <StatisticCard
+            statistic={{
+              value: 1102893,
+              prefix: '¥',
+              description: (
+                <Space>
+                  <Statistic title="实际完成度" value="82.3%" />
+                  <Statistic title="当前目标" value="¥6000" />
+                </Space>
+              ),
+            }}
+            chart={
+              <>
+                <img
+                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                  alt="chart"
+                  width="100%"
+                />
+              </>
+            }
+            style={{ width: 268 }}
+          />
+        </ProCard>
+        <ProCard ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+          actions={[
+            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+            <Dropdown.Button key="audit" overlay={menu} type="text">操作</Dropdown.Button>
+          ]}
+        >
+          <StatisticCard
+            statistic={{
+              value: 1102893,
+              prefix: '¥',
+              description: (
+                <Space>
+                  <Statistic title="实际完成度" value="82.3%" />
+                  <Statistic title="当前目标" value="¥6000" />
+                </Space>
+              ),
+            }}
+            chart={
+              <>
+                <img
+                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                  alt="chart"
+                  width="100%"
+                />
+              </>
+            }
+            style={{ width: 268 }}
+          />
+        </ProCard><ProCard ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+          actions={[
+            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+            <Dropdown.Button key="audit" overlay={menu} type="text">操作</Dropdown.Button>
+          ]}
+        >
+          <StatisticCard
+            statistic={{
+              value: 1102893,
+              prefix: '¥',
+              description: (
+                <Space>
+                  <Statistic title="实际完成度" value="82.3%" />
+                  <Statistic title="当前目标" value="¥6000" />
+                </Space>
+              ),
+            }}
+            chart={
+              <>
+                <img
+                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                  alt="chart"
+                  width="100%"
+                />
+              </>
+            }
+            style={{ width: 268 }}
+          />
+        </ProCard>
+        <ProCard ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+          actions={[
+            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+            <Dropdown.Button key="audit" overlay={menu} type="text">操作</Dropdown.Button>
+          ]}
+        >
+          <StatisticCard
+            statistic={{
+              value: 1102893,
+              prefix: '¥',
+              description: (
+                <Space>
+                  <Statistic title="实际完成度" value="82.3%" />
+                  <Statistic title="当前目标" value="¥6000" />
+                </Space>
+              ),
+            }}
+            chart={
+              <>
+                <img
+                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                  alt="chart"
+                  width="100%"
+                />
+              </>
+            }
+            style={{ width: 268 }}
+          />
+        </ProCard>
       </ProCard>
+      <Modal
+        style={{ top: 20 }}
+        visible={visible}
+        onOk={() => setVisible(false)}
+        onCancel={() => setVisible(false)}
+        width={window.innerWidth*0.75}
+        footer={null}
+      >
+        <ProCard ghost>
+          <ProCard>
+            <Typography>
+              <Title id="projectInfo" level={3}>项目信息</Title>
+              <Paragraph>
+                <Skeleton active />
+                <Skeleton active />
+                <Skeleton active />
+              </Paragraph>
+              <Title id="milestone" level={3}>大计事</Title>
+              <Paragraph>
+                <Skeleton active />
+                <Timeline mode="left">
+                  <Timeline.Item color="green" label="2015-09-01">
+                    <p>Create a services</p>
+                    <Skeleton.Image active />
+                  </Timeline.Item>
+                  <Timeline.Item color="blue" label="2015-09-01 09:12:11">
+                    <p>Solve initial network problems</p>
+                    <Skeleton.Image active />
+                    <Skeleton.Image active />
+                  </Timeline.Item>
+                  <Timeline.Item color="red">Technical testing</Timeline.Item>
+                  <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
+                </Timeline>
+                <Skeleton active />
+                <Timeline mode="left">
+                  <Timeline.Item color="green" label="2015-09-01">Create a services</Timeline.Item>
+                  <Timeline.Item color="blue" label="2015-09-01 09:12:11">Solve initial network problems</Timeline.Item>
+                  <Timeline.Item color="red">Technical testing</Timeline.Item>
+                  <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
+                </Timeline>
+              </Paragraph>
+              <Title id="docs" level={3}>相关材料</Title>
+              <Paragraph>
+                <Skeleton active />
+                <Skeleton.Image active />
+                <Skeleton.Image active />
+                <Skeleton.Image active />
+              </Paragraph>
+              <Title id="otherInfo" level={3}>其他信息</Title>
+              <Paragraph>
+                <Skeleton active />
+                <Skeleton active />
+              </Paragraph>
+            </Typography>
+          </ProCard>
+          <ProCard colSpan="200px">
+            <Anchor affix="false" offsetTop={200}  targetOffset={targetOffset}>
+              <Anchor.Link href="#projectInfo" title="项目信息" />
+              <Anchor.Link href="#milestone" title="大计事" />
+              <Anchor.Link href="#docs" title="相关材料" />
+              <Anchor.Link href="#otherInfo" title="其他信息" />
+            </Anchor>
+          </ProCard>
+        </ProCard>
+      </Modal>
     </PageContainer>
   );
 };
