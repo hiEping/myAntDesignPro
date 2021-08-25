@@ -6,7 +6,7 @@ export default () => {
   const intl = useIntl();
   const defaultMessage = intl.formatMessage({
     id: 'app.copyright.produced',
-    defaultMessage: '建投集团信息公司',
+    defaultMessage: '建投集团信息公司出品',
   });
 
   return (

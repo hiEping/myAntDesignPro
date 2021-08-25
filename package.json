@@ -60,6 +60,7 @@
     "@ant-design/pro-descriptions": "^1.6.8",
     "@ant-design/pro-form": "^1.18.3",
     "@ant-design/pro-layout": "^6.15.3",
+    "@ant-design/pro-list": "^1.12.1",
     "@ant-design/pro-table": "^2.30.8",
     "@antv/data-set": "^0.11.0",
     "@antv/l7": "^2.3.7",
@@ -79,6 +80,7 @@
     "react-dev-inspector": "^1.1.1",
     "react-dom": "^17.0.0",
     "react-fittext": "^1.0.0",
+    "react-gantt-antd": "^1.0.9",
     "react-helmet-async": "^1.0.4",
     "umi": "^3.5.0",
     "umi-serve": "^1.9.10"

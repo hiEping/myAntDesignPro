@@ -19,13 +19,14 @@ const Settings: LayoutSettings & {
   iconfontUrl: '',
 */
   // 明青
-  "primaryColor": "#13C2C2",
-  "layout": "mix",
-  "contentWidth": "Fluid",
-  "navTheme": "light",
-  "splitMenus": false,
-  "fixedHeader": false,
-  "title":"项目决策信息平台"
+  primaryColor: "#13C2C2",
+  layout: "mix",
+  contentWidth: "Fluid",
+  navTheme: "light",
+  splitMenus: false,
+  fixedHeader: false,
+  title:"项目决策信息平台",
+  logo:"/logo_jt.png",
 };
 
 export default Settings;

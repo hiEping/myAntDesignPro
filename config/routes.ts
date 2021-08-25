@@ -1,10 +1,15 @@
 export default [
   {
+    path: '/',
+    redirect: '/welcome',
+  },
+  {
     path: '/welcome',
     name: 'welcome',
     icon: 'smile',
     component: './Welcome',
-  }, // 数据看板
+  },
+  // 数据看板
   {
     path: '/dashBoard',
     name: 'dashboard',
@@ -42,105 +47,92 @@ export default [
         ],
       },
     ],
-  }, // 管理页
-  {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/orgnization',
-        name: 'orgnization',
-        component: './Welcome',
-      },
-      {
-        path: '/admin/staff',
-        name: 'staff',
-        component: './Welcome',
-      },
-      {
-        path: '/admin/act',
-        name: 'act',
-        component: './Welcome',
-      },
-      {
-        path: '/admin/flow',
-        name: 'flow',
-        component: './Welcome',
-      },
-    ],
-  }, // 数据查询
+  },
+  // 信息查询
   {
     path: '/list',
     name: 'list',
     icon: 'table',
     routes: [
       {
-        path: 'table-list',
-        name: 'table-list',
-        component: './TableList/index',
+        path: 'gys',
+        name: 'gys',
+        component: './list/gys',
+      },
+      {
+        path: 'project',
+        name: 'project',
+        component: './list/project',
+      },
+      {
+        path: 'law',
+        name: 'law',
+        component: './list/law',
       },
     ],
-  }, // 数据填报
+  },
+  // 数据填报
   {
     path: '/data-recording',
     name: 'data-recording',
     icon: 'icon-bi',
     routes: [
       {
-        path: 'proform',
-        name: 'proform',
-        component: './data-recording/proform',
-      },
-      {
-        path: 'schema-form',
-        name: 'schema-form',
-        component: './data-recording/schema-form',
-      },
-    ],
-  }, // 资料库
-  {
-    path: '/doc-lib',
-    name: 'doc-lib',
-    icon: 'icon-dangan',
-    routes: [
-      {
-        path: 'project',
-        name: 'project',
-        component: './doc-lib/project',
-      },
-      {
-        path: 'project-design',
-        name: 'project-design',
-        component: './doc-lib/project-design',
+        path: 'part',
+        name: 'part',
+        component: './data-recording/part',
       },
       {
         path: 'project-plan',
         name: 'project-plan',
-        component: './doc-lib/project-plan',
+        component: './data-recording/project-plan',
       },
       {
-        path: 'project-hetong',
-        name: 'project-hetong',
-        component: './doc-lib/project-hetong',
+        path:'in-safe',
+        name:'in-safe',
+        component:'./data-recording/insafe',
       },
       {
-        path: 'law',
-        name: 'law',
-        component: './doc-lib/law',
+        path:'qc',
+        name:'qc',
+        component:'./data-recording/qc',
       },
       {
-        path: 'project-meeting',
-        name: 'project-meeting',
-        component: './doc-lib/project-meeting',
+        path:'COVID-19',
+        name:'COVID-19',
+        component:'./data-recording/COVID-19',
       },
     ],
   },
+  // 管理页
   {
-    path: '/',
-    redirect: '/welcome',
+    path: '/admin',
+    name: 'admin',
+    icon: 'crown',
+    access: 'canAdmin',
+    //component: './Admin',
+    routes: [
+      {
+        path: 'orgnization',
+        name: 'orgnization',
+        component: './Welcome',
+      },
+      {
+        path: 'staff',
+        name: 'staff',
+        component: './Welcome',
+      },
+      {
+        path: 'act',
+        name: 'act',
+        component: './Welcome',
+      },
+      {
+        path: 'flow',
+        name: 'flow',
+        component: './Welcome',
+      },
+    ],
   },
   {
     name: 'flow',
