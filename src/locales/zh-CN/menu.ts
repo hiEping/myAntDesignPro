@@ -18,7 +18,7 @@ export default {
   'menu.dashboard.workplace': '工作台',
   /////////////
   'menu.data-recording':'数据填报',
-  'menu.data-recording.part':'分项开工',
+  'menu.data-recording.part':'分项工程',
   'menu.data-recording.project-plan':'计划进度',
   'menu.data-recording.in-safe':'安全生产',
   'menu.data-recording.qc':'质量控制',
@@ -27,7 +27,7 @@ export default {
   'menu.list': '信息查询',
   'menu.list.project':'项目信息',
   'menu.list.gys':'供应商',
-  'menu.list.law':'法律法规',
+  'menu.list.law':'行业规范',
   /////////////
   'menu.profile': '详情页',
   'menu.profile.basic': '基础详情页',
