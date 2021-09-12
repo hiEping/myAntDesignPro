@@ -16,7 +16,7 @@ const { TabPane } = Tabs;
 const rankingListData: { title: string; total: number }[] = [];
 for (let i = 0; i < 7; i += 1) {
   rankingListData.push({
-    title: `工专路 ${i} 号店`,
+    title: `分部工程 ${i} `,
     total: 323234,
   });
 }
@@ -42,17 +42,11 @@ const SalesCard = ({
         tabBarExtraContent={
           <div className={styles.salesExtraWrap}>
             <div className={styles.salesExtra}>
-              <a className={isActive('today')} onClick={() => selectDate('today')}>
-                今日
-              </a>
-              <a className={isActive('week')} onClick={() => selectDate('week')}>
-                本周
-              </a>
               <a className={isActive('month')} onClick={() => selectDate('month')}>
-                本月
+                按月
               </a>
               <a className={isActive('year')} onClick={() => selectDate('year')}>
-                本年
+                按年
               </a>
             </div>
             <RangePicker
@@ -65,7 +59,7 @@ const SalesCard = ({
         size="large"
         tabBarStyle={{ marginBottom: 24 }}
       >
-        <TabPane tab="销售额" key="sales">
+        <TabPane tab="计量分析" key="sales">
           <Row>
             <Col xl={16} lg={12} md={12} sm={24} xs={24}>
               <div className={styles.salesBar}>
@@ -84,19 +78,20 @@ const SalesCard = ({
                   yAxis={{
                     visible: true,
                     title: {
-                      visible: false,
+                      visible: true,
+                      text: "万元",
                     },
                   }}
-                  title={{
-                    visible: true,
-                    text: '销售趋势',
-                    style: {
-                      fontSize: 14,
-                    },
-                  }}
+                  // title={{
+                  //   visible: true,
+                  //   text: '销售趋势',
+                  //   style: {
+                  //     fontSize: 14,
+                  //   },
+                  // }}
                   meta={{
                     y: {
-                      alias: '销售量',
+                      alias: '计量金额',
                     },
                   }}
                 />
@@ -104,7 +99,7 @@ const SalesCard = ({
             </Col>
             <Col xl={8} lg={12} md={12} sm={24} xs={24}>
               <div className={styles.salesRank}>
-                <h4 className={styles.rankingTitle}>门店销售额排名</h4>
+                <h4 className={styles.rankingTitle}>X月计量金额排序</h4>
                 <ul className={styles.rankingList}>
                   {rankingListData.map((item, i) => (
                     <li key={item.title}>
@@ -124,7 +119,7 @@ const SalesCard = ({
             </Col>
           </Row>
         </TabPane>
-        <TabPane tab="访问量" key="views">
+        <TabPane tab="" key="views">
           <Row>
             <Col xl={16} lg={12} md={12} sm={24} xs={24}>
               <div className={styles.salesBar}>
@@ -146,16 +141,16 @@ const SalesCard = ({
                       visible: false,
                     },
                   }}
-                  title={{
-                    visible: true,
-                    text: '访问量趋势',
-                    style: {
-                      fontSize: 14,
-                    },
-                  }}
+                  // title={{
+                  //   visible: true,
+                  //   text: '访问量趋势',
+                  //   style: {
+                  //     fontSize: 14,
+                  //   },
+                  // }}
                   meta={{
                     y: {
-                      alias: '访问量',
+                      alias: '计量单元数',
                     },
                   }}
                 />

@@ -5,14 +5,14 @@ import { Statistic } from 'antd';
 import styles from './index.less';
 
 function fixedZero(val: number) {
-  return val * 1 < 10 ? `0${val}` : val;
+  return val < 10 ? `0${val}` : val;
 }
 
 function getActiveData() {
   const activeData = [];
-  for (let i = 0; i < 24; i += 1) {
+  for (let i = 1; i < 13; i += 1) {
     activeData.push({
-      x: `${fixedZero(i)}:00`,
+      x: `${fixedZero(i)}月`,
       y: Math.floor(Math.random() * 200) + i * 50,
     });
   }
@@ -59,7 +59,7 @@ export default class ActiveChart extends Component {
 
     return (
       <div className={styles.activeChart}>
-        <Statistic title="目标评估" value="有望达到预期" />
+        <Statistic title="目标评估" value="有望达到计划预期" />
         <div style={{ marginTop: 32 }}>
           <TinyArea data={activeData} xField="x" forceFit yField="y" height={84} />
         </div>
@@ -79,7 +79,7 @@ export default class ActiveChart extends Component {
         )}
         {activeData && (
           <div className={styles.activeChartLegend}>
-            <span>00:00</span>
+            <span>{activeData[0].x}</span>
             <span>{activeData[Math.floor(activeData.length / 2)].x}</span>
             <span>{activeData[activeData.length - 1].x}</span>
           </div>

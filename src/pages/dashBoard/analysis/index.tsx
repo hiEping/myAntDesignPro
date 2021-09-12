@@ -10,7 +10,6 @@ import IntroduceRow from './components/IntroduceRow';
 import SalesCard from './components/SalesCard';
 import TopSearch from './components/TopSearch';
 import ProportionSales from './components/ProportionSales';
-import OfflineData from './components/OfflineData';
 import { useRequest } from 'umi';
 
 import { fakeChartData } from './service';
@@ -31,7 +30,7 @@ type SalesType = 'all' | 'online' | 'stores';
 
 const Analysis: FC<AnalysisProps> = () => {
   const [salesType, setSalesType] = useState<SalesType>('all');
-  const [currentTabKey, setCurrentTabKey] = useState<string>('');
+  // const [currentTabKey, setCurrentTabKey] = useState<string>('');
   const [rangePickerValue, setRangePickerValue] = useState<RangePickerValue>(
     getTimeDistance('year'),
   );
@@ -92,11 +91,11 @@ const Analysis: FC<AnalysisProps> = () => {
     setSalesType(e.target.value);
   };
 
-  const handleTabChange = (key: string) => {
-    setCurrentTabKey(key);
-  };
+  // const handleTabChange = (key: string) => {
+  //   setCurrentTabKey(key);
+  // };
 
-  const activeKey = currentTabKey || (data?.offlineData[0] && data?.offlineData[0].name) || '';
+  // const activeKey = currentTabKey || (data?.offlineData[0] && data?.offlineData[0].name) || '';
 
   return (
     <GridContent>
@@ -145,15 +144,15 @@ const Analysis: FC<AnalysisProps> = () => {
           </Col>
         </Row>
 
-        <Suspense fallback={null}>
-          <OfflineData
-            activeKey={activeKey}
-            loading={loading}
-            offlineData={data?.offlineData || []}
-            offlineChartData={data?.offlineChartData || []}
-            handleTabChange={handleTabChange}
-          />
-        </Suspense>
+        {/*<Suspense fallback={null}>*/}
+        {/*  <OfflineData*/}
+        {/*    activeKey={activeKey}*/}
+        {/*    loading={loading}*/}
+        {/*    offlineData={data?.offlineData || []}*/}
+        {/*    offlineChartData={data?.offlineChartData || []}*/}
+        {/*    handleTabChange={handleTabChange}*/}
+        {/*  />*/}
+        {/*</Suspense>*/}
       </>
     </GridContent>
   );

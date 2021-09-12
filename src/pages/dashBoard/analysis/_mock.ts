@@ -15,7 +15,7 @@ for (let i = 0; i < fakeY.length; i += 1) {
 }
 
 const visitData2 = [];
-const fakeY2 = [1, 6, 4, 8, 3, 7, 2];
+const fakeY2 = [1, 6, 4, 8, 17, 6, 4, 8, 3, 7, 2, 5, 3, 7, 2, 5, 10, 10, 17, 7, 2, 5, 10, 3, 7, 2, 5, 10, 17, 14, 6, 4, 8, 17, 6, 4, 8, 3];
 for (let i = 0; i < fakeY2.length; i += 1) {
   visitData2.push({
     x: moment(new Date(beginDay + 1000 * 60 * 60 * 24 * i)).format('YYYY-MM-DD'),
@@ -34,7 +34,7 @@ const searchData = [];
 for (let i = 0; i < 50; i += 1) {
   searchData.push({
     index: i + 1,
-    keyword: `搜索关键词-${i}`,
+    keyword: `分项工程${i}`,
     count: Math.floor(Math.random() * 1000),
     range: Math.floor(Math.random() * 100),
     status: Math.floor((Math.random() * 10) % 2),
@@ -42,27 +42,27 @@ for (let i = 0; i < 50; i += 1) {
 }
 const salesTypeData = [
   {
-    x: '家用电器',
+    x: '路面层',
     y: 4544,
   },
   {
-    x: '食用酒水',
+    x: '基层',
     y: 3321,
   },
   {
-    x: '个护健康',
+    x: '底基层',
     y: 3113,
   },
   {
-    x: '服饰箱包',
+    x: '护栏',
     y: 2341,
   },
   {
-    x: '母婴产品',
+    x: '互通',
     y: 1231,
   },
   {
-    x: '其他',
+    x: '边坡',
     y: 1231,
   },
 ];
@@ -117,28 +117,6 @@ const salesTypeDataOffline = [
   },
 ];
 
-const offlineData = [];
-for (let i = 0; i < 10; i += 1) {
-  offlineData.push({
-    name: `Stores ${i}`,
-    cvr: Math.ceil(Math.random() * 9) / 10,
-  });
-}
-const offlineChartData = [];
-for (let i = 0; i < 20; i += 1) {
-  const date = moment(new Date().getTime() + 1000 * 60 * 30 * i).format('HH:mm');
-  offlineChartData.push({
-    date,
-    type: '客流量',
-    value: Math.floor(Math.random() * 100) + 10,
-  });
-  offlineChartData.push({
-    date,
-    type: '支付笔数',
-    value: Math.floor(Math.random() * 100) + 10,
-  });
-}
-
 const radarOriginData = [
   {
     name: '个人',
@@ -191,8 +169,8 @@ const getFakeChartData: AnalysisData = {
   visitData2,
   salesData,
   searchData,
-  offlineData,
-  offlineChartData,
+  // offlineData,
+  // offlineChartData,
   salesTypeData,
   salesTypeDataOnline,
   salesTypeDataOffline,

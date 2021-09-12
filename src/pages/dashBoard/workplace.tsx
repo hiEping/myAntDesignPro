@@ -60,6 +60,7 @@ export default () => {
                 src="https://gw.alipayobjects.com/zos/alicdn/PmKfn4qvD/mubiaowancheng-lan.svg"
                 alt="进度条"
                 width="100%"
+                height={33}
               />
             }
             footer={
@@ -134,13 +135,6 @@ export default () => {
             />
           </StatisticCard>
         </ProCard>
-      </RcResizeObserver>
-      <RcResizeObserver
-        key="resize-observer"
-        onResize={(offset) => {
-          setResponsive(offset.width < 596);
-        }}
-      >
         <ProCard split={responsive ? 'horizontal' : 'vertical'} ghost gutter={8} title='质量指标' style={{marginTop:16}}>
           <StatisticCard
             statistic={{
@@ -180,201 +174,201 @@ export default () => {
             chartPlacement="left"
           />
         </ProCard>
+        <ProCard style={{marginTop:16}} gutter={8} title="待审批" ghost>
+          <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+            actions={[
+              <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+              <Dropdown overlay={menu}>
+                <Button type="text">
+                  操作 <DownOutlined />
+                </Button>
+              </Dropdown>
+            ]}
+          >
+            <StatisticCard
+              statistic={{
+                value: 1102893,
+                prefix: '¥',
+                description: (
+                  <Space>
+                    <Statistic title="实际完成度" value="82.3%" />
+                    <Statistic title="当前目标" value="¥6000" />
+                  </Space>
+                ),
+              }}
+              chart={
+                <>
+                  <img
+                    src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                    alt="chart"
+                    width="100%"
+                  />
+                </>
+              }
+              style={{ width: 268 }}
+            />
+          </ProCard>
+          <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+            actions={[
+              <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+              <Dropdown overlay={menu}>
+                <Button type="text">
+                  操作 <DownOutlined />
+                </Button>
+              </Dropdown>
+            ]}
+          >
+            <StatisticCard
+              statistic={{
+                value: 1102893,
+                prefix: '¥',
+                description: (
+                  <Space>
+                    <Statistic title="实际完成度" value="82.3%" />
+                    <Statistic title="当前目标" value="¥6000" />
+                  </Space>
+                ),
+              }}
+              chart={
+                <>
+                  <img
+                    src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                    alt="chart"
+                    width="100%"
+                  />
+                </>
+              }
+              style={{ width: 268 }}
+            />
+          </ProCard>
+          <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+            actions={[
+              <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+              <Dropdown overlay={menu}>
+                <Button type="text">
+                  操作 <DownOutlined />
+                </Button>
+              </Dropdown>
+            ]}
+          >
+            <StatisticCard
+              statistic={{
+                value: 1102893,
+                prefix: '¥',
+                description: (
+                  <Space>
+                    <Statistic title="实际完成度" value="82.3%" />
+                    <Statistic title="当前目标" value="¥6000" />
+                  </Space>
+                ),
+              }}
+              chart={
+                <>
+                  <img
+                    src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                    alt="chart"
+                    width="100%"
+                  />
+                </>
+              }
+              style={{ width: 268 }}
+            />
+          </ProCard>
+          <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
+            actions={[
+              <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
+              <Dropdown overlay={menu}>
+                <Button type="text">
+                  操作 <DownOutlined />
+                </Button>
+              </Dropdown>
+            ]}
+          >
+            <StatisticCard
+              statistic={{
+                value: 1102893,
+                prefix: '¥',
+                description: (
+                  <Space>
+                    <Statistic title="实际完成度" value="82.3%" />
+                    <Statistic title="当前目标" value="¥6000" />
+                  </Space>
+                ),
+              }}
+              chart={
+                <>
+                  <img
+                    src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
+                    alt="chart"
+                    width="100%"
+                  />
+                </>
+              }
+              style={{ width: 268 }}
+            />
+          </ProCard>
+        </ProCard>
+        <Modal
+          style={{ top: 20 }}
+          visible={visible}
+          onOk={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+          width={window.innerWidth*0.75}
+          footer={null}
+        >
+          <ProCard ghost>
+            <ProCard>
+              <Typography>
+                <Title id="projectInfo" level={3}>项目信息</Title>
+                <Paragraph>
+                  <Skeleton active />
+                  <Skeleton active />
+                  <Skeleton active />
+                </Paragraph>
+                <Title id="milestone" level={3}>大纪事</Title>
+                <Paragraph>
+                  <Skeleton active />
+                  <Timeline mode="left">
+                    <Timeline.Item color="green" label="2015-09-01">
+                      <p>Create a services</p>
+                      <Skeleton.Image />
+                    </Timeline.Item>
+                    <Timeline.Item color="blue" label="2015-09-01 09:12:11">
+                      <p>Solve initial network problems</p>
+                      <Skeleton.Image />
+                      <Skeleton.Image />
+                    </Timeline.Item>
+                    <Timeline.Item color="red">Technical testing</Timeline.Item>
+                    <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
+                  </Timeline>
+                  <Skeleton active />
+                  <Timeline mode="left">
+                    <Timeline.Item color="green" label="2015-09-01">Create a services</Timeline.Item>
+                    <Timeline.Item color="blue" label="2015-09-01 09:12:11">Solve initial network problems</Timeline.Item>
+                    <Timeline.Item color="red">Technical testing</Timeline.Item>
+                    <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
+                  </Timeline>
+                </Paragraph>
+                <Title id="docs" level={3}>相关材料</Title>
+                <Paragraph>
+                  <Skeleton active />
+                  <Skeleton.Image />
+                  <Skeleton.Image />
+                  <Skeleton.Image />
+                </Paragraph>
+                <Title id="otherInfo" level={3}>其他信息</Title>
+                <Paragraph>
+                  <Skeleton active />
+                  <Skeleton active />
+                </Paragraph>
+              </Typography>
+            </ProCard>
+            <ProCard colSpan="200px">
+              <AnchorExample/>
+            </ProCard>
+          </ProCard>
+        </Modal>
       </RcResizeObserver>
-      <ProCard style={{marginTop:16}} gutter={8} title="待审批" ghost>
-        <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
-          actions={[
-            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
-            <Dropdown overlay={menu}>
-              <Button type="text">
-                操作 <DownOutlined />
-              </Button>
-            </Dropdown>
-          ]}
-        >
-          <StatisticCard
-            statistic={{
-              value: 1102893,
-              prefix: '¥',
-              description: (
-                <Space>
-                  <Statistic title="实际完成度" value="82.3%" />
-                  <Statistic title="当前目标" value="¥6000" />
-                </Space>
-              ),
-            }}
-            chart={
-              <>
-                <img
-                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                  alt="chart"
-                  width="100%"
-                />
-              </>
-            }
-            style={{ width: 268 }}
-          />
-        </ProCard>
-        <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
-          actions={[
-            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
-            <Dropdown overlay={menu}>
-              <Button type="text">
-                操作 <DownOutlined />
-              </Button>
-            </Dropdown>
-          ]}
-        >
-          <StatisticCard
-            statistic={{
-              value: 1102893,
-              prefix: '¥',
-              description: (
-                <Space>
-                  <Statistic title="实际完成度" value="82.3%" />
-                  <Statistic title="当前目标" value="¥6000" />
-                </Space>
-              ),
-            }}
-            chart={
-              <>
-                <img
-                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                  alt="chart"
-                  width="100%"
-                />
-              </>
-            }
-            style={{ width: 268 }}
-          />
-        </ProCard>
-        <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
-          actions={[
-            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
-            <Dropdown overlay={menu}>
-              <Button type="text">
-                操作 <DownOutlined />
-              </Button>
-            </Dropdown>
-          ]}
-        >
-          <StatisticCard
-            statistic={{
-              value: 1102893,
-              prefix: '¥',
-              description: (
-                <Space>
-                  <Statistic title="实际完成度" value="82.3%" />
-                  <Statistic title="当前目标" value="¥6000" />
-                </Space>
-              ),
-            }}
-            chart={
-              <>
-                <img
-                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                  alt="chart"
-                  width="100%"
-                />
-              </>
-            }
-            style={{ width: 268 }}
-          />
-        </ProCard>
-        <ProCard title="支付审批" extra="XX项目" style={{ maxWidth: 300 }} headerBordered hoverable
-          actions={[
-            <Button type="text" key="detail" onClick={() => setVisible(true)}>详情</Button>,
-            <Dropdown overlay={menu}>
-              <Button type="text">
-                操作 <DownOutlined />
-              </Button>
-            </Dropdown>
-          ]}
-        >
-          <StatisticCard
-            statistic={{
-              value: 1102893,
-              prefix: '¥',
-              description: (
-                <Space>
-                  <Statistic title="实际完成度" value="82.3%" />
-                  <Statistic title="当前目标" value="¥6000" />
-                </Space>
-              ),
-            }}
-            chart={
-              <>
-                <img
-                  src="https://gw.alipayobjects.com/zos/alicdn/BA_R9SIAV/charts.svg"
-                  alt="chart"
-                  width="100%"
-                />
-              </>
-            }
-            style={{ width: 268 }}
-          />
-        </ProCard>
-      </ProCard>
-      <Modal
-        style={{ top: 20 }}
-        visible={visible}
-        onOk={() => setVisible(false)}
-        onCancel={() => setVisible(false)}
-        width={window.innerWidth*0.75}
-        footer={null}
-      >
-        <ProCard ghost>
-          <ProCard>
-            <Typography>
-              <Title id="projectInfo" level={3}>项目信息</Title>
-              <Paragraph>
-                <Skeleton active />
-                <Skeleton active />
-                <Skeleton active />
-              </Paragraph>
-              <Title id="milestone" level={3}>大纪事</Title>
-              <Paragraph>
-                <Skeleton active />
-                <Timeline mode="left">
-                  <Timeline.Item color="green" label="2015-09-01">
-                    <p>Create a services</p>
-                    <Skeleton.Image />
-                  </Timeline.Item>
-                  <Timeline.Item color="blue" label="2015-09-01 09:12:11">
-                    <p>Solve initial network problems</p>
-                    <Skeleton.Image />
-                    <Skeleton.Image />
-                  </Timeline.Item>
-                  <Timeline.Item color="red">Technical testing</Timeline.Item>
-                  <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
-                </Timeline>
-                <Skeleton active />
-                <Timeline mode="left">
-                  <Timeline.Item color="green" label="2015-09-01">Create a services</Timeline.Item>
-                  <Timeline.Item color="blue" label="2015-09-01 09:12:11">Solve initial network problems</Timeline.Item>
-                  <Timeline.Item color="red">Technical testing</Timeline.Item>
-                  <Timeline.Item color="pink" label="2015-09-01 09:12:11">Network problems being solved</Timeline.Item>
-                </Timeline>
-              </Paragraph>
-              <Title id="docs" level={3}>相关材料</Title>
-              <Paragraph>
-                <Skeleton active />
-                <Skeleton.Image />
-                <Skeleton.Image />
-                <Skeleton.Image />
-              </Paragraph>
-              <Title id="otherInfo" level={3}>其他信息</Title>
-              <Paragraph>
-                <Skeleton active />
-                <Skeleton active />
-              </Paragraph>
-            </Typography>
-          </ProCard>
-          <ProCard colSpan="200px">
-            <AnchorExample/>
-          </ProCard>
-        </ProCard>
-      </Modal>
     </PageContainer>
   );
 };

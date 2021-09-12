@@ -63,6 +63,9 @@
     "@ant-design/pro-list": "^1.12.1",
     "@ant-design/pro-table": "^2.30.8",
     "@antv/data-set": "^0.11.0",
+    "@antv/dw-analyzer": "^1.1.5",
+    "@antv/dw-random": "^1.1.7",
+    "@antv/knowledge": "^1.1.4",
     "@antv/l7": "^2.3.7",
     "@antv/l7-maps": "^2.3.7",
     "@antv/l7-react": "^2.1.9",
@@ -87,6 +90,7 @@
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^2.0.2",
+    "@antv/chart-advisor": "^1.1.7",
     "@types/express": "^4.17.0",
     "@types/history": "^4.7.2",
     "@types/jest": "^26.0.0",

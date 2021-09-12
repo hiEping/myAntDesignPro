@@ -19,7 +19,7 @@ const Settings: LayoutSettings & {
   iconfontUrl: '',
 */
   // 明青
-  primaryColor: "#13C2C2",
+  primaryColor: "#07dcbc",
   layout: "mix",
   contentWidth: "Fluid",
   navTheme: "light",
